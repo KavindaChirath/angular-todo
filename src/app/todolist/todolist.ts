@@ -10,9 +10,14 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class Todolist {
   taskArray = [{ task: 'Brush teeth' , isCompleted: false}];
+  newTask: string = '';
   
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    if (this.newTask.trim()) {
+      this.taskArray.push({ task: this.newTask, isCompleted: false });
+      this.newTask = '';
+      form.reset();
+    }
   }
 
   toggleTask(task: any) {

@@ -4,7 +4,7 @@
 <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
   <div class="form-group">
     <label for="exampleInputEmail1">Task</label>
-    <input type="text" class="form-control" id="task" placeholder="Enter task">
+    <input type="text" class="form-control" id="task" placeholder="Enter task" name="task" [(ngModel)]="newTask" required>
     <small id="errormessage" class="form-text text-danger">Required Field.</small>
   </div>
   <button id = "submitButton" type="submit" class="btn btn-primary">Submit</button>
@@ -23,6 +23,8 @@
       <td>{{ task.task }}</td>
       <td><input id = "myCheckbox" type="checkbox" [checked]="task.isCompleted" (change)="toggleTask(task)"></td>
       <td><button class = "btn btn-danger btn-small" (click)="deleteTask(task)">Delete</button></td>
+    </tr>
+    <tr>
     </tr>
   </tbody>
 </table>
