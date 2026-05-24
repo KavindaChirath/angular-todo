@@ -16,9 +16,10 @@ export class Todolist {
     if (this.newTask.trim()) {
       this.taskArray.push({ task: this.newTask, isCompleted: false });
       this.newTask = '';
-      form.reset();
+      form.reset(); // Reset the form after submission
     }
   }
+  
 
   toggleTask(task: any) {
     task.isCompleted = !task.isCompleted;
