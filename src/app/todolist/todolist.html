@@ -5,9 +5,13 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Task</label>
     <input type="text" class="form-control" id="task" placeholder="Enter task" name="task" [(ngModel)]="newTask" required>
-    <small id="errormessage" class="form-text text-danger">Required Field.</small>
+    <small *ngIf="taskForm.invalid && taskForm.dirty"
+    id="errormessage" class="form-text text-danger">Required Field.</small>
   </div>
-  <button id = "submitButton" type="submit" class="btn btn-primary">Submit</button>
+
+  <!--Validate the Submit button-->
+  <button [disabled]="!taskForm.valid"
+   id = "submitButton" type="submit" class="btn btn-primary">Submit</button>
 </form>
 <hr>
 <table class="table">
