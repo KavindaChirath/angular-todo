@@ -15,3 +15,15 @@ h1 {
 #submitForm{
     margin-top: 40px;
 }
+
+#delete{
+    width:70px;
+}
+
+#edit{
+    width:60px;
+}
+
+#save{
+    width:60px;
+}

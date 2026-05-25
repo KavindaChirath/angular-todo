@@ -28,4 +28,12 @@ export class Todolist {
   deleteTask(task: any) {
     this.taskArray = this.taskArray.filter(t => t !== task);
   }
+
+  editTask(task: any) {
+    this.taskArray = this.taskArray.filter(t => t !== task);
+  }
+
+  saveTask(task: any) {
+    this.taskArray = this.taskArray.filter(t => t !== task);
+  }
 }
