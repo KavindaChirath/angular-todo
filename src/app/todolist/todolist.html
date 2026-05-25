@@ -20,13 +20,20 @@
       <th scope="col">Task</th>
       <th scope="col">Completed</th>
       <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Save</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let task of taskArray">
-      <td>{{ task.task }}</td>
+      <td>
+      <input type="text" class="form-control" id="task" value="{{ task.task }}" readonly>
+      </td>
       <td><input id = "myCheckbox" type="checkbox" [checked]="task.isCompleted" (change)="toggleTask(task)"></td>
-      <td><button class = "btn btn-danger btn-small" (click)="deleteTask(task)">Delete</button></td>
+
+      <td><button id="delete" class = "btn btn-danger btn-small" (click)="deleteTask(task)">Delete</button></td>
+      <td><button id="edit" class = "btn btn-primary btn-small" (click)="editTask(task)">Edit</button></td>
+      <td><button id="save" class = "btn btn-warning btn-small" (click)="saveTask(task)">Save</button></td>
     </tr>
     <tr>
     </tr>
