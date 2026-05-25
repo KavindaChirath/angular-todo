@@ -1,9 +1,9 @@
 
 <div class = "container">
   <h1>TO-DO Apploication</h1>
-<form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+<form id="submitForm" #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
   <div class="form-group">
-    <label for="exampleInputEmail1">Task</label>
+    <hr>
     <input type="text" class="form-control" id="task" placeholder="Enter task" name="task" [(ngModel)]="newTask" required>
     <small *ngIf="taskForm.invalid && taskForm.dirty"
     id="errormessage" class="form-text text-danger">Required Field.</small>
