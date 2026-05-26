@@ -9,12 +9,12 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './todolist.css',
 })
 export class Todolist {
-  taskArray = [{ task: 'Brush teeth' , isCompleted: false}];
+  taskArray = [{ task: 'Brush teeth' , isCompleted: false, iseditable: false }];
   newTask: string = '';
   
   onSubmit(form: NgForm) {
     if (this.newTask.trim()) {
-      this.taskArray.push({ task: this.newTask, isCompleted: false });
+      this.taskArray.push({ task: this.newTask, isCompleted: false, iseditable: false });
       this.newTask = '';
       form.reset(); // Reset the form after submission
     }
@@ -30,10 +30,10 @@ export class Todolist {
   }
 
   editTask(task: any) {
-    this.taskArray = this.taskArray.filter(t => t !== task);
+    task.iseditable = true;
   }
 
   saveTask(task: any) {
-    this.taskArray = this.taskArray.filter(t => t !== task);
+    task.iseditable = false;
   }
 }
