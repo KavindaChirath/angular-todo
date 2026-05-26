@@ -27,7 +27,7 @@
   <tbody>
     <tr *ngFor="let task of taskArray">
       <td>
-      <input type="text" class="form-control" id="task" value="{{ task.task }}" readonly>
+      <input [class]="{'edit': task.iseditable, 'not-edit': !task.iseditable, 'crossed': task.isCompleted}" type="text" class="form-control" id="task" value="{{ task.task }}" [readonly]="!task.iseditable">
       </td>
       <td><input id = "myCheckbox" type="checkbox" [checked]="task.isCompleted" (change)="toggleTask(task)"></td>
 

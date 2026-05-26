@@ -27,3 +27,19 @@ h1 {
 #save{
     width:60px;
 }
+
+.edit {
+    border: 2px solid #cb1111e6;
+}
+
+.non-edit {
+    border: none;
+}
+
+.crossed {
+    text-decoration: line-through
+}
+
+#myCheckbox{
+    border:none;
+}
